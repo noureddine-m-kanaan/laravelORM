@@ -25,12 +25,12 @@
         </header>
         <div class="card-content">
             <div class="content">
-                <table class="table is-hoverable">
+                <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th>#</th>
+                        <th class="table-primary">#</th>
                         <th>Titre</th>
-                        <th>Genre</th>
+                        <th class="table-primary">Genre</th>
                         <th></th>
                         <th></th>
                         @auth
@@ -40,9 +40,9 @@
                     </thead>
                     @foreach($mangas as $manga)
                         <tr>
-                            <td> {{ $manga->id }} </td>
+                            <td class="table-primary"> {{ $manga->id }} </td>
                             <td><strong>{{ $manga->titre}}</strong>  </td>
-                            <td> {{ $manga->genre}}</td>
+                            <td class="table-primary"> {{ $manga->genre}}</td>
                             <td><a class="btn btn-primary" href="{{ route('mangas.show', $manga->id) }}">Voir</a></td>
                             @auth
                                 <td><a class="btn btn-warning" href="{{ route('mangas.edit', $manga->id) }}">Modifier</a></td>
